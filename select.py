@@ -7,6 +7,7 @@ patterns = {
     "phone number": r'(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}',
     "credit card number": r'\b\d{4}[-\s]\d{4}[-\s]\d{4}[-\s]\d{4}\b',
     "time stamp": r'\b(?:[01]?\d|2[0-3]):[0-5]\d(?:\s?(?i:[ap]m))?\b|\b(?:1[0-2]|[1-9]):[0-5]\d\s?(?i:[ap]m)\b',
+    "HTML tag": r'<[^>]+>',
     "hashtag": r'#[A-Za-z0-9_]+',
     "currency amount": r'\$\d{1,3}(?:,\d{3})*(?:\.\d{2})?'
 }

@@ -1,15 +1,12 @@
 # ALU Regex Data Extraction Tool
 
-A robust Python-based utility developed to aggregate and extract structured data from unstructured web responses and strings using the raw power of **Regular Expressions (Regex)**.
-
----
+A robust Python-based utility developed to aggregate and extract structured data from unstructured web responses and strings using the raw power of **Regular Expressions**.
 
 ## 🚀 Project Overview
-As part of a junior full-stack developer portfolio project, this application parses through messy strings (such as scraped web pages, articles, or logs) and precisely isolates distinct types of sensitive or structured data. 
+As part of a junior full-stack developer portfolio project, this application parses through messy strings and precisely isolates distinct types of sensitive or structured data. 
 
 The application features **dual execution modes**: an automated pre-configured demonstration mode (for out-of-the-box evaluation) and an interactive search mode allowing users to input custom text dynamically.
 
----
 
 ## 📋 Supported Data Types & Regex Patterns
 
@@ -24,12 +21,11 @@ The application extracts and explicitly labels the following 8 data types:
 7. **Hashtags:** Identifies social media tags and keywords (e.g., `#TechPulse2026`, `#WebDevelopment`).
 8. **Currency Amounts:** Captures monetary values featuring thousands separators and decimal cent values (e.g., `$19.99`, `$1,234.56`).
 
----
 
 ## 🛠️ Project Structure
 
 ```text
-alu_regex-data-extraction-YourGitHubUsername/
+alu_regex-data-extraction-binelintsa-sketch/
 │
 ├── select.py       # Main Python script containing regex logic and CLI runner
 └── README.md          # Project documentation and setup guide
