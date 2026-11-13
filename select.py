@@ -25,7 +25,7 @@ def extract_and_label_data(text):
         
         if matches:
             found_any = True
-            print(f"📁 {category_name}s Found ({len(matches)}):")
+            print(f"<> {category_name}s Found ({len(matches)}):")
             for match in matches:
                 print(f"   -> {match}")
             print("~" * 40)
@@ -43,35 +43,40 @@ if __name__ == "__main__":
     print("Running automated demonstration...")
     extract_and_label_data(sample_text)
     
-    # 2. INTERACTIVE MULTI-LINE SEARCH MODE
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print("   INTERACTIVE MULTI-LINE SEARCH MODE")
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print("Instructions:")
-    print("1. Paste or type your multi-line text below.")
-    print("2. When you are finished, type the word END on a brand new line and press Enter.")
-    print("3. Type 'quit' to exit the program.\n")
-    
+    # 2. INTERACTIVE MENU MODE
     while True:
-        print("Enter your text below (Type 'END' on a new line to process, or 'quit' to exit):")
-        lines = []
-        while True:
-            try:
-                line = input()
-            except EOFError:
-                break
-                
-            if line.strip().lower() == 'quit':
-                print("Exiting program. Goodbye!")
-                exit()
-            if line.strip() == 'END':
-                break
-            lines.append(line)
-            
-        user_text = "\n".join(lines)
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("   INTERACTIVE MULTI-LINE SEARCH MODE")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("1. Enter text to analyze")
+        print("2. Quit")
         
-        if user_text.strip() == "":
-            print("No text entered. Try again.\n")
-            continue
+        choice = input("Enter your choice (1 or 2): ").strip()
+        
+        if choice == '2':
+            print("Exiting program. Goodbye!")
+            break
+        elif choice == '1':
+            print("\nPaste or type your multi-line text below.")
+            print("When you are finished, type the word END on a brand new line and press Enter:\n")
             
-        extract_and_label_data(user_text)
+            lines = []
+            while True:
+                try:
+                    line = input()
+                except EOFError:
+                    break
+                    
+                if line.strip() == 'END':
+                    break
+                lines.append(line)
+                
+            user_text = "\n".join(lines)
+            
+            if user_text.strip() == "":
+                print("No text entered. Returning to menu.\n")
+                continue
+                
+            extract_and_label_data(user_text)
+        else:
+            print("Invalid choice! Please enter 1 or 2.\n")
